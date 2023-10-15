@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Walter Jiang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/10/13/web开发前后端交互逻辑/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="react和django前后端交互逻辑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react+django前后端交互逻辑">
+<meta property="og:url" content="http://example.com/2023/10/13/web%E5%BC%80%E5%8F%91%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E9%80%BB%E8%BE%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="react和django前后端交互逻辑">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-13T02:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-14T03:17:37.410Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="web development">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            react+django前后端交互逻辑 -
+        
+        Walter Jiang
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"static","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Zhicheng(Walter) Jiang","subtitle":{"text":["gap year now where intern at DJI technology company (https://auto.dji.com/)"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/WalterJ726","instagram":null,"zhihu":null,"twitter":null,"email":null,"linkedin":"https://www.linkedin.com/in/zhicheng-jiang-089bb318a/","fa-solid fa-file-pdf":"/files/resume_english.pdf"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","path":"/about"},"Photos":{"icon":"fa-solid fa-image","path":"/masonry/"},"Links":{"icon":"fa-regular fa-link","submenus":{"Github":"https://github.com/EvanNotFound/hexo-theme-redefine","Blog":"https://ohevan.com","Friends":"/friends"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Walter Jiang
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/about"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/masonry/"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-image"></i>
+                                        
+                                        PHOTOS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-link"></i>
+                                        
+                                        LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine">GITHUB
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://ohevan.com">BLOG
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/friends">FRIENDS
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/about"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/masonry/"  >
+                             
+                                
+                                    <i class="fa-solid fa-image"></i>
+                                
+                                PHOTOS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-link"></i>
+                                
+                                LINKS&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine">GITHUB</a>
+                            </li>
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" target="_blank" rel="noopener" href="https://ohevan.com">BLOG</a>
+                            </li>
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="/friends">FRIENDS</a>
+                            </li>
+                        
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">react+django前后端交互逻辑</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/avatar.jfif">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Walter Jiang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-13 10:00</span>
+        <span class="mobile">2023-10-13 10:00</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-14 11:17:37</span>
+            <span class="mobile">2023-10-14 11:17:37</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Web-development/">Web development</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/web-development/">web development</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在这几周，为了帮公司完成一个部门门户网站，学习了一些前端的知识。还学习了一下web开发中前端和后端如何进行交互，以及如何利用nginx，uwgi和docker部署网站到云端。在这篇文章，我主要介绍一下如何进行前后端交互，下一篇会讲一下如何部署。</p>
+<h2 id="前后端交互基本框架-部署React前端和Django后端的3种方法"><a href="#前后端交互基本框架-部署React前端和Django后端的3种方法" class="headerlink" title="前后端交互基本框架(部署React前端和Django后端的3种方法)"></a>前后端交互基本框架(部署React前端和Django后端的3种方法)</h2><p>如果您要用Django REST开发web应用程序后端，并使用React或Vue开发应用程序前端。有很多方法实现。你需要做出很多选择：</p>
+<p>您的前端是独立的静态站点还是通过Django视图实现？<br>你把后端和前端放在不同的子域上吗？<br>您是单独部署后端和前端，还是一起部署？<br>你怎么选择？哪一种是“正确的方式”？</p>
+<p>坏消息是，没有正确的方式来做这件事，而且有很多东西要权衡。好消息是，我整理了三种不同的常见选择，各有利弊。</p>
+<h3 id="选项1-将所有内容塞进Django"><a href="#选项1-将所有内容塞进Django" class="headerlink" title="选项1-将所有内容塞进Django"></a>选项1-将所有内容塞进Django</h3><p>这是“默认”方法，您有一个Django站点，只需添加React即可。所有HTML都通过Django视图提供，所有JavaScript和CSS都由Django负责打包，并以静态文件的形式部署。所有代码，前端和后端，都在一个Git存储库中。您可以在单个域（如<a class="link"   target="_blank" rel="noopener" href="http://www.myapp.com)部署应用程序./" >www.myapp.com）部署应用程序。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>部署代码时，需要：</p>
+<p>使用webpack或类似的工具构建JavaScript和CSS资源，并将它们放入Django静态文件目录<br>像往常一样部署Django。</p>
+<p>您将需要使用类似django webpack loader的东西来集成webpack的构建资源和django的静态文件系统和模板。除此之外，这是一个普通的Django部署。</p>
+<p>举个代码的例子</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 先使用yarn build或npm build把代码进行打包</span><br><span class="line">yarn build</span><br><span class="line">// 然后把build之后的文件夹，/dist或/build文件夹，放入django的文件夹/static中</span><br><span class="line"></span><br><span class="line">// 然后再把build之后的文件夹里面的index.html放入django的根目录(/templates)文件夹中，如果没有/templates文件夹记得配置一下</span><br><span class="line"></span><br><span class="line">// 再去settings.py设置static_url和STATICFILES_PATH = [ os.path.join(BASE_DIR, &quot;/static&quot;)]</span><br><span class="line"></span><br><span class="line">可参考网站https://blog.csdn.net/qq_41000891/article/details/82961680</span><br></pre></td></tr></table></figure></div>
+
+<p>优点是：</p>
+<ul>
+<li>最简单的基础设施。除了设置django webpack loader和在部署过程开始时添加webpack构建之外，您无需对生产结构执行任何其他操作。</li>
+<li>没有额外的创建，费用，配置，调试或焦虑。</li>
+<li>同时更新。如果您需要做出影响前端和后端的更改，那么您可以在一次Git提交中完成所有更改，并使用单个部署将更改导入生产环境。</li>
+<li>更紧密的整合。通过此设置，您可以使用Django的视图通过模板将上下文数据从后端传递到前端。此外，还可以进行服务器端渲染（使用NodeJS进行额外的处理）。</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>前端和后端的单一部署。通常您只想在前端部署一个小的CSS或内容更改，或者只部署后端更改。通过此设置，您必须始终同时部署后端和前端。这意味着您需要等待前端生成，即使您没有进行任何前端更改！更糟糕的是，如果您使用持续集成实践，则其他代码库中的失败测试或linter错误可能会导致部署失败。您不希望仅仅因为有人忘记在JavaScript中使用分号而导致数据库迁移部署失败。</li>
+<li>混乱的技术堆栈。后端开发人员需要知道一点React，前端开发人员需要知道一点Django才能使这个系统工作。</li>
+<li>精密的django网页包加载程序。在Webpack和Django之间建立集成对我来说是一个痛苦的过程。我不记得为什么，我只记得痛苦。事实上，这个列表中的每一个选项都会导致你想在某个时刻把你的计算机扔出窗口，而这个也不例外。</li>
+</ul>
+<p>适用于：</p>
+<ul>
+<li>你想让你的基础设施保持简单</li>
+<li>你不在乎部署时间</li>
+<li>通常将前端和后端一起部署</li>
+<li>您需要在前端和后端之间进行紧密集成（例如，数据传递、服务器端呈现）</li>
+</ul>
+<h2 id="选项2-完全独立的基础设施"><a href="#选项2-完全独立的基础设施" class="headerlink" title="选项2-完全独立的基础设施"></a>选项2-完全独立的基础设施</h2><p>这种方法在过去几年中变得越来越流行。在这个设置中，您有两个独立的代码库，一个用于前端，一个用于后端，每个都有自己的Git存储库。</p>
+<p>前端部署为一个“静态站点”，仅包含HTML CSS和JavaScript文件。它与Django分别部署，部署在在AWS S3 bucket、Netlify或类似的东西中。前端是独立于后端构建、测试和部署的。前端通过REST API调用从后端获取数据。</p>
+<p>后端是一个Django REST API，没有HTML视图（除了管理页面），并且不承载静态内容（除了admin所需的内容）。它是独立于后端构建、测试和部署的。</p>
+<p>重要的是，由于前端和后端在不同的服务器上，它们也将有不同的域名。后端可能位于api.myapp.com上，前端可能位于<a class="link"   target="_blank" rel="noopener" href="http://www.myapp.com上./" >www.myapp.com上。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>优点是：</p>
+<ul>
+<li>独立部署。部署前端时不需要等待后端，反之亦然。</li>
+<li>关注点分离。后端开发人员只需要考虑API，而不需要考虑视图或CSS。前端开发人员只需要考虑后端提供的API，而不需要考虑Django的内部工作。您可以使用选项1来实现这一点，但此方法会更严格地执行它。</li>
+<li>如果后端坏了，前端仍然可以工作。您的用户仍会遇到错误，但网站不会彻底没有响应。<br>安全权限可以拆分。您可以允许部署前端与后端的人员分开，这通常意味着更多的人将有部署权限，从而使您的团队更具生产力。</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>更多的基础设施。您将需要设置和维护静态站点，外加一个额外的部署过程，这将需要更多的工作，更复杂。</li>
+<li>跨域困境。您遇到了更多问题，因为前端与后端位于不同的子域上。您需要对Django进行一些额外配置，以允许前端正确地与后端对话。显然这是安全问题。如果不解决这个问题，您可能会遇到向后端发出API请求、接收cookies等问题。我不太明白。我不想太明白。我有比找出SESSION_COOKIE_DOMAIN，CORS_ORIGIN_REGEX_WHITELIST和friends的正确值更重要的事情要做。更糟糕的是，跨域问题不会出现在您的本地计算机上，因为一切都是从本地主机提供的，所以您需要在知道配置是否正确之前部署配置。</li>
+</ul>
+<p>以下是一些跨域Django设置，希望您永远不需要考虑：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SESSION_COOKIE_DOMAIN</span><br><span class="line">CSRF_COOKIE_DOMAIN</span><br><span class="line">CSRF_TRUSTED_ORIGINS</span><br><span class="line">CORS_ORIGIN_ALLOW_ALL</span><br><span class="line">CORS_ALLOW_CREDENTIALS</span><br><span class="line">CORS_ORIGIN_REGEX_WHITELIST</span><br></pre></td></tr></table></figure></div>
+
+<p>适用于：</p>
+<ul>
+<li>您有独立的前端和后端开发人员</li>
+<li>要分别部署后端和前端</li>
+<li>您希望完全分离后端和前端基础结构</li>
+<li>您不介意再增加一点操作复杂性和配置</li>
+</ul>
+<h2 id="选项3-一台服务器，单独部署"><a href="#选项3-一台服务器，单独部署" class="headerlink" title="选项3-一台服务器，单独部署"></a>选项3-一台服务器，单独部署</h2><p>这种方法试图融合方案1和2。我们的想法是仍然将前端部署为一个单独的静态站点，但是您可以将所有内容部署到一个服务器上，使用一个域名：</p>
+<p>后端和前端分别有两个独立的代码库</p>
+<p>两个代码库都是独立部署的，但是部署到同一个服务器上</p>
+<p>两个代码库都托管在一个域上，如<a class="link"   target="_blank" rel="noopener" href="http://www.myapp.com/" >www.myapp.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>您可以使用一个web服务器来管理它，比如NGINX，它处理所有传入的请求。对URL path&#x2F;api&#x2F;get的请求被转发到运行Django应用程序（传统的反向代理设置）的WSGI服务器，而所有其他请求发送到前端，前端被设置为静态站点并限定访问的路径（例如&#x2F;var&#x2F;www&#x2F;）。</p>
+<p>优点是：</p>
+<ul>
+<li>方案2的大部分好处。分离关注点和独立部署仍然是可行的。</li>
+<li>没有“跨域困境”。因为所有的请求都是从一个域发出的，所以您不必在Django中处理那些可怕的跨域设置。</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>更多的基础设施。这个设置仍然比“将所有内容塞进Django”选项更复杂。</li>
+<li>需要完全控制主机Web服务器。您需要能够安装和配置NGINX，将文件部署到文件系统等来完成这项工作。如果您使用的是典型的云虚拟机，这很简单，但如果您使用的是Heroku之类的东西，则可能会更加棘手（不确定）。</li>
+</ul>
+<p>适用于：<br>你想把前端和后端分开，但你不需要完全分离基础设施</p>
+<p>您对主机Web服务器有足够的控制权限</p>
+<p>具体代码例子</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 有个前端，比如用react，vue写的</span><br><span class="line">// 通过axios框架，对后端服务器发送get,post请求</span><br><span class="line">function sendRequestFromFrontEnd() &#123;</span><br><span class="line">    const res = axios.get(&quot;localhost:8000&quot;)</span><br><span class="line">    // 做一些交互逻辑，比如说把res数据放到前端的表格中</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 后端，比如说用django写的,可以通过restful framework来完成这个逻辑</span><br><span class="line">class handleRequestFromFrontEndAndReturnResponse():</span><br><span class="line">    def get():</span><br><span class="line">    // 处理来自前端的get请求</span><br><span class="line">    </span><br><span class="line">    // 处理逻辑，判断密码是否正确等等</span><br><span class="line"></span><br><span class="line">    // 返回结果</span><br><span class="line">    return Response(&quot;data&quot;, HTTP.status.OK)</span><br><span class="line">    def post():</span><br><span class="line">    // 处理来自前端的post请求</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 前端通过nginx做到反向代理</span><br><span class="line"></span><br><span class="line">前端 -&gt;(发送http请求)-&gt; nginx(反向代理请求给后端服务器)-&gt; 后端restful api返回结果</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>英文原文：<a class="link"   target="_blank" rel="noopener" href="https://mattsegal.dev/django-spa-infrastructure.html" >https://mattsegal.dev/django-spa-infrastructure.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="前后端交互的具体代码实现"><a href="#前后端交互的具体代码实现" class="headerlink" title="前后端交互的具体代码实现"></a>前后端交互的具体代码实现</h2><p>我在公司中，由于中台那边只能让我使用一个镜像，而不能通过docker compose的方法来实现容器间的通信。所以我只能使用第一种和第三种方法，把处理所有请求的服务器弄到一个docker镜像当中。</p>
+<h3 id="前端React实现"><a href="#前端React实现" class="headerlink" title="前端React实现"></a>前端React实现</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> [tasks, setTasks] = <span class="title function_">useState</span>([]);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 获取 tasks 数据</span></span><br><span class="line">        axios.<span class="title function_">get</span>(<span class="string">&#x27;http://your-django-server.com/api/tasks/&#x27;</span>)</span><br><span class="line">            .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="title function_">setTasks</span>(response.<span class="property">data</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            .<span class="title function_">catch</span>(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;There was an error fetching the tasks!&quot;</span>, error);</span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;, []); <span class="comment">// 在刚开始的时候请求一次，和类组件中的componentDidMount作用类似</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;App&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Tasks<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;tasks.map(task =&gt; (</span></span><br><span class="line"><span class="language-xml">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;task.id&#125;</span>&gt;</span>&#123;task.title&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                ))&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure></div>
+<h3 id="后端django实现"><a href="#后端django实现" class="headerlink" title="后端django实现"></a>后端django实现</h3><p>Django 设置:<br>models.py:</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Task</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    completed = models.BooleanField(default=<span class="literal">False</span>)</span><br><span class="line">serializers.py:</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> serializers</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Task</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TaskSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = Task</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>views.py:</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> generics</span><br><span class="line"><span class="keyword">from</span> rest_framework.response <span class="keyword">import</span> Response</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Task</span><br><span class="line"><span class="keyword">from</span> .serializers <span class="keyword">import</span> TaskSerializer</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TaskList</span>(generics.GenericAPIView):</span><br><span class="line">    queryset = Task.objects.<span class="built_in">all</span>()</span><br><span class="line">    serializer_class = TaskSerializer</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 处理GET请求</span></span><br><span class="line">        queryset = self.get_queryset()</span><br><span class="line">        serializer = self.get_serializer(queryset, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> Response(serializer.data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 处理POST请求</span></span><br><span class="line">        serializer = self.get_serializer(data=request.data)</span><br><span class="line">        <span class="keyword">if</span> serializer.is_valid():</span><br><span class="line">            serializer.save()</span><br><span class="line">            <span class="keyword">return</span> Response(serializer.data, status=<span class="number">201</span>)</span><br><span class="line">        <span class="keyword">return</span> Response(serializer.errors, status=<span class="number">400</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<p>urls.py:</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"><span class="keyword">from</span> rest_framework.routers <span class="keyword">import</span> DefaultRouter</span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> TaskViewSet</span><br><span class="line"></span><br><span class="line">router = DefaultRouter()</span><br><span class="line">router.register(<span class="string">r&#x27;tasks&#x27;</span>, TaskViewSet)</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, include(router.urls)),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> react+django前后端交互逻辑</li>
+        <li><strong>Author:</strong> Walter Jiang</li>
+        <li><strong>Created at
+                :</strong> 2023-10-13 10:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-10-14 11:17:37
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://walterj726.github.io/2023/10/13/web开发前后端交互逻辑/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/web-development/">#web development</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/10/14/restful%E6%A1%86%E6%9E%B6/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">restful api和rest framework的作用</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/10/12/hello-world/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">react+django前后端交互逻辑</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6-%E9%83%A8%E7%BD%B2React%E5%89%8D%E7%AB%AF%E5%92%8CDjango%E5%90%8E%E7%AB%AF%E7%9A%843%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-text">前后端交互基本框架(部署React前端和Django后端的3种方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E9%A1%B91-%E5%B0%86%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%E5%A1%9E%E8%BF%9BDjango"><span class="nav-text">选项1-将所有内容塞进Django</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B92-%E5%AE%8C%E5%85%A8%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="nav-text">选项2-完全独立的基础设施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B93-%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%8D%95%E7%8B%AC%E9%83%A8%E7%BD%B2"><span class="nav-text">选项3-一台服务器，单独部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E7%9A%84%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">前后端交互的具体代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AFReact%E5%AE%9E%E7%8E%B0"><span class="nav-text">前端React实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AFdjango%E5%AE%9E%E7%8E%B0"><span class="nav-text">后端django实现</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Walter Jiang</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/libs/minimasonry.min.js"></script>
+
+    
+<script src="/js/plugins/masonry.js" type="module"></script>
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
