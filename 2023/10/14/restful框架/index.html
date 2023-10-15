@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Hexo Theme Redefine">
     
-    <meta name="author" content="Walter Jiang">
+    <meta name="author" content="Zhicheng Jiang">
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
 <meta property="og:description" content="浅谈restful框架 REST 是表述性状态传递的英文缩写，由计算机科学家 Roy Fielding 创建。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-14T03:15:12.000Z">
-<meta property="article:modified_time" content="2023-10-14T03:44:56.262Z">
+<meta property="article:modified_time" content="2023-10-15T07:01:51.887Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="web development">
 <meta name="twitter:card" content="summary">
@@ -43,7 +43,7 @@
         
             restful api和rest framework的作用 -
         
-        Walter Jiang
+        Zhicheng Jiang&#39;s Website
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -127,7 +127,7 @@
             
             <a class="logo-title" href="/">
                 
-                Walter Jiang
+                Zhicheng Jiang&#39;s Website
                 
             </a>
         </div>
@@ -378,7 +378,7 @@
                 </div>
                 <div class="info flex flex-col justify-between">
                     <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">Walter Jiang</span>
+                        <span class="name text-default-text-color text-lg font-semibold">Zhicheng Jiang</span>
                         
                             <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
                         
@@ -394,8 +394,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-14 11:44:56</span>
-            <span class="mobile">2023-10-14 11:44:56</span>
+            <span class="desktop">2023-10-15 15:01:51</span>
+            <span class="mobile">2023-10-15 15:01:51</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -450,20 +450,33 @@
 
         <div class="article-content markdown-body">
             <p>REST 是表述性状态传递的英文缩写，由计算机科学家 Roy Fielding 创建。</p>
-<h2 id="什么是rest规范"><a href="#什么是rest规范" class="headerlink" title="什么是rest规范"></a>什么是rest规范</h2><ol>
-<li><p>Principle 1: client and Server architecture<br>以客户端向服务端发送请求的方式请求获得数据<br>服务端向客户端发送规定格式的响应</p>
-</li>
-<li><p>Principle 2: Stateless<br>Server side code does not remember anything about previous request<br>Each request needs all information to proceed<br>However, all the states stored in the storage tier like redis or mysql, mongo.</p>
-</li>
-<li><p>Principle 3: cacheability<br>Responses should be cacheable </p>
-</li>
-<li><p>Principle 4: Transparently Layered System </p>
-</li>
-<li><p>Principle 5: Uniform Interface<br>Manipulate representations of resources<br>• HTML, XML, JSON,…<br>• Uniform resource identification in request<br>• HTTP: &#x2F;flights &#x2F;flights&#x2F;1234&#x2F;seats </p>
-</li>
-<li><p>Principle 6 (Optional): Code on Demand</p>
-</li>
-</ol>
+<h2 id="什么是rest规范"><a href="#什么是rest规范" class="headerlink" title="什么是rest规范"></a>什么是rest规范</h2><h3 id="Principle-1-client-and-Server-architecture"><a href="#Principle-1-client-and-Server-architecture" class="headerlink" title="Principle 1: client and Server architecture"></a>Principle 1: client and Server architecture</h3><p>以客户端向服务端发送请求的方式请求获得数据<br>服务端向客户端发送规定格式的响应</p>
+<h3 id="Principle-2-Stateless"><a href="#Principle-2-Stateless" class="headerlink" title="Principle 2: Stateless"></a>Principle 2: Stateless</h3><p>Server side code does not remember anything about previous request<br>Each request needs all information to proceed<br>However, all the states stored in the storage tier like redis or mysql, mongo.</p>
+<h3 id="Principle-3-cacheability"><a href="#Principle-3-cacheability" class="headerlink" title="Principle 3: cacheability"></a>Principle 3: cacheability</h3><p>Responses should be cacheable </p>
+<h3 id="Principle-4-Transparently-Layered-System"><a href="#Principle-4-Transparently-Layered-System" class="headerlink" title="Principle 4: Transparently Layered System"></a>Principle 4: Transparently Layered System</h3><h3 id="Principle-5-Uniform-Interface"><a href="#Principle-5-Uniform-Interface" class="headerlink" title="Principle 5: Uniform Interface"></a>Principle 5: Uniform Interface</h3><p>Manipulate representations of resources<br>• HTML, XML, JSON,…<br>• Uniform resource identification in request<br>• HTTP: &#x2F;flights &#x2F;flights&#x2F;1234&#x2F;seats </p>
+<p>开发工程师再也不用对于每种资源请求单独写一个url，只需要写对应的请求方法即可。</p>
+<p>也就是，对于&#x2F;tasks&#x2F;这个url。用户想查询资源的时候，使用get请求获取&#x2F;tasks&#x2F;这个url下面的资源。用户想修改或者上传资源的时候，使用post请求&#x2F;tasks&#x2F;这个url下面的资源</p>
+<p>而不是查询资源时，写的url是&#x2F;getTasks&#x2F;，上传资源的时候写的url是&#x2F;createTask&#x2F;</p>
+<h3 id="Principle-6-Optional-Code-on-Demand"><a href="#Principle-6-Optional-Code-on-Demand" class="headerlink" title="Principle 6 (Optional): Code on Demand"></a>Principle 6 (Optional): Code on Demand</h3><h3 id="这样的好处有："><a href="#这样的好处有：" class="headerlink" title="这样的好处有："></a>这样的好处有：</h3><p>场景： 假设您正在构建一个博客应用程序，该应用程序允许用户查看、创建、编辑和删除博客文章。这个应用程序有一个前端和一个后端，它们通过 REST API 进行通信。</p>
+<p>REST API 的好处：</p>
+<p>分离前后端： 前端是一个单独的应用，可以使用 React 构建，而后端是一个使用 Node.js 和 Express 构建的 RESTful API。它们可以独立开发和维护。</p>
+<p>跨平台兼容性： 前端可以在 Web、iOS 和 Android 上运行，因为它们都可以使用 HTTP 来访问 REST API。</p>
+<p>资源： 每个博客文章都是一个资源，可以通过唯一的 URL 访问，例如 &#x2F;api&#x2F;posts&#x2F;1 表示第一篇博客文章。</p>
+<p>HTTP 方法： 前端可以使用不同的 HTTP 方法与后端交互。例如，使用 GET 方法来获取博客文章列表，使用 POST 方法来创建新的博客文章，使用 PUT 方法来更新博客文章，使用 DELETE 方法来删除博客文章。</p>
+<p>状态码： 当前端请求失败或成功时，后端可以返回适当的 HTTP 状态码，如 200 OK、201 Created、400 Bad Request 或 404 Not Found。这有助于前端了解请求的结果。</p>
+<p>可测试性： 开发人员可以使用工具如 Postman 或 cURL 来测试 REST API 的不同端点，确保它们按预期工作。</p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><h4 id="获取博客文章列表："><a href="#获取博客文章列表：" class="headerlink" title="获取博客文章列表："></a>获取博客文章列表：</h4><p>前端发出 HTTP GET 请求到 &#x2F;api&#x2F;posts。</p>
+<p>后端返回包含博客文章列表的 JSON 数据，同时返回 200 OK 状态码。<br>前端将数据渲染并显示给用户。</p>
+<h4 id="创建新博客文章："><a href="#创建新博客文章：" class="headerlink" title="创建新博客文章："></a>创建新博客文章：</h4><p>前端收集用户输入的数据，并发出 HTTP POST 请求到 &#x2F;api&#x2F;posts。</p>
+<p>后端接收到请求，验证数据，创建新的博客文章，并返回 201 Created 状态码以及新文章的详细信息。</p>
+<p>前端可以在界面上显示新的博客文章。</p>
+<h4 id="更新博客文章："><a href="#更新博客文章：" class="headerlink" title="更新博客文章："></a>更新博客文章：</h4><p>用户编辑一篇博客文章并保存。</p>
+<p>前端发出 HTTP PUT 请求到 &#x2F;api&#x2F;posts&#x2F;1（假设正在编辑第一篇博客文章）。</p>
+<p>后端接收到请求，更新博客文章的内容，并返回 200 OK 状态码。</p>
+<h4 id="删除博客文章："><a href="#删除博客文章：" class="headerlink" title="删除博客文章："></a>删除博客文章：</h4><p>用户删除一篇博客文章。</p>
+<p>前端发出 HTTP DELETE 请求到 &#x2F;api&#x2F;posts&#x2F;2（假设要删除第二篇博客文章）。</p>
+<p>后端接收到请求，删除博客文章，并返回 204 No Content 状态码。</p>
+<p>这个示例说明了如何使用 REST API 来实现博客应用程序的基本功能。通过使用 REST API，前端和后端可以独立开发，而且应用程序可以轻松地扩展和维护。同时，HTTP 方法和状态码使通信更加清晰和可靠。</p>
 
         </div>
 
@@ -472,13 +485,13 @@
                 <div class="article-copyright-info-container">
     <ul>
         <li><strong>Title:</strong> restful api和rest framework的作用</li>
-        <li><strong>Author:</strong> Walter Jiang</li>
+        <li><strong>Author:</strong> Zhicheng Jiang</li>
         <li><strong>Created at
                 :</strong> 2023-10-14 11:15:12</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-10-14 11:44:56
+                    :</strong> 2023-10-15 15:01:51
             </li>
         
         <li>
@@ -587,7 +600,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">restful api和rest framework的作用</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFrest%E8%A7%84%E8%8C%83"><span class="nav-text">什么是rest规范</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFrest%E8%A7%84%E8%8C%83"><span class="nav-text">什么是rest规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-1-client-and-Server-architecture"><span class="nav-text">Principle 1: client and Server architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-2-Stateless"><span class="nav-text">Principle 2: Stateless</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-3-cacheability"><span class="nav-text">Principle 3: cacheability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-4-Transparently-Layered-System"><span class="nav-text">Principle 4: Transparently Layered System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-5-Uniform-Interface"><span class="nav-text">Principle 5: Uniform Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-6-Optional-Code-on-Demand"><span class="nav-text">Principle 6 (Optional): Code on Demand</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E6%A0%B7%E7%9A%84%E5%A5%BD%E5%A4%84%E6%9C%89%EF%BC%9A"><span class="nav-text">这样的好处有：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="nav-text">例子：</span></a></li></ol></li></ol>
 
     </div>
 </div>
@@ -615,7 +628,7 @@
               <span>2022</span>
               -
             
-            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Walter Jiang</a>
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Zhicheng Jiang</a>
         </div>
         
             <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
